@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @suggestion.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @suggestion.body %>
+</p>
+
+<div class="bigrow">q
+<% @suggestion.wynthoughts.each do |wynthought| %>
+  <div class="suggestiondetails">
+    <div class="wynthoughtrow">
+     <div class="wynthoughtitem"><%= wynthought.body %></div>
+     <div class="reviewitem"><font color="white"><em>Added on <%= time_ago_in_words wynthought.created_at %> ago</em></font></div>
+     <%= link_to '', wynthought, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<h3>New Wynthought</h3>
+<%= render 'wynthoughts/form', wynthought: @wynthought %>
+
+<%= link_to 'Edit', edit_suggestion_path(@suggestion) %> |
+<%= link_to 'Back', suggestions_path %>

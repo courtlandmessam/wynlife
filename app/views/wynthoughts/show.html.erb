@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @wynthought.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @wynthought.body %>
+</p>
+
+<p>
+  <strong>Suggestion:</strong>
+  <%= @wynthought.suggestion %>
+</p>
+
+<%= link_to 'Edit', edit_wynthought_path(@wynthought) %> |
+<%= link_to 'Back', wynthoughts_path %>
